@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Hello World Logger",
+  "version": "1.0",
+  "description": "Logs 'Hello world' when navigating on YouTube",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "popup/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["popup/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "YouTube Logger"
+  }
+}
