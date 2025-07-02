@@ -52,6 +52,8 @@ function fastForwardAd() {
     if (currentTime < duration - 5) {
       video.currentTime = Math.max(duration - 1, currentTime + 10);
       console.log(`Fast-forwarded ad from ${currentTime}s to ${video.currentTime}s`);
+      console.log("Now trying to skip.")
+      attemptSkip()
     }
   }
 }

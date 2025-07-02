@@ -1,12 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Hello World Logger",
+  "name": "YouTube Ad Skipper",
   "version": "1.0",
-  "description": "Logs 'Hello world' when navigating on YouTube",
+  "description": "Automatically skips YouTube advertisements by fast-forwarding them to completion",
   "permissions": [
-    "tabs",
-    "nativeMessaging"
-
+    "tabs"
   ],
   "host_permissions": [
     "*://*.youtube.com/*"
@@ -23,6 +21,12 @@
   ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "YouTube Logger"
+    "default_title": "YouTube Ad Skipper"
+  },
+  "icons": {
+    "16": "popup/logo.svg",
+    "32": "popup/logo.svg",
+    "48": "popup/logo.svg",
+    "128": "popup/logo.svg"
   }
 }
