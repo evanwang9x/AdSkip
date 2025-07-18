@@ -17,7 +17,12 @@
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
-      "js": ["popup/content.js"],
+      "js": [
+        "adskip_logic/adDetection.js",
+        "adskip_logic/fastForward.js", 
+        "adskip_logic/clickSkipButton.js",
+        "adskip_logic/adSkipper.js"
+      ],
       "run_at": "document_idle"
     }
   ],
