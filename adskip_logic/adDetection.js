@@ -3,34 +3,17 @@
 // Ad detection module
 class AdDetection {
     static isAdPlaying() {
-        const adIndicators = [
-            ".ytp-ad-player-overlay",
-            ".ytp-ad-image-overlay",
-            ".ytp-ad-text",
-            ".ytp-ad-preview-container",
-            ".ytp-ad-skip-button-container",
-            ".ytp-ad-overlay-ad-info-dialog-container",
-            ".ytp-ad-progress-list",
-            ".ad-showing",
-            ".ytp-ad-simple-ad-badge"
-        ];
-
-        for (const selector of adIndicators) {
-            if (document.querySelector(selector)) {
-                return true;
-            }
-        }
-
         const adBadge = document.querySelector(".ytp-ad-badge");
         if (adBadge && adBadge.textContent) {
+            console.log("[YT Ad Skipper] Ad detected via: .ytp-ad-badge");
             return true;
         }
 
         const video = document.querySelector("video");
         if (video && video.classList.contains("ad-showing")) {
+            console.log("[YT Ad Skipper] Ad detected via: video.ad-showing class");
             return true;
         }
-
         return false;
     }
 
